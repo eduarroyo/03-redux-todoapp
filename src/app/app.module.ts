@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { todoReducer } from './todos/counter.reducer';
+import { todoReducer } from './todos/todo.reducer';
 import { AppComponent } from './app.component';
 import { TodoModule } from './todos/todo.module';
 import { FooterComponent } from './footer/footer.component';
@@ -19,7 +19,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     TodoModule,
-    StoreModule.forRoot(todoReducer),
+    StoreModule.forRoot({todos: todoReducer}),
     StoreDevtoolsModule.instrument( {
       maxAge: 25,
       logOnly: environment.production
