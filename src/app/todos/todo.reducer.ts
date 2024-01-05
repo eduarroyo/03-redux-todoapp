@@ -34,7 +34,8 @@ const _todoReducer = createReducer(initialState,
             return todo;
         });
     }),
-    on(actions.remove, (state, { id }) => state.filter(todo => todo.id != id))
+    on(actions.remove, (state, { id }) => state.filter(todo => todo.id != id)),
+    on(actions.removeCompleted, (state) => state.filter(todo => !todo.completed))
 );
 
 export function todoReducer(state: Todo[] | undefined, action: Action) {

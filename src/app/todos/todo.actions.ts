@@ -19,3 +19,7 @@ export const remove = createAction(
     '[TODO] remove', 
     props<{id: number,}>()
 );
+
+export const removeCompleted = createAction(
+    '[TODO] remove completed'
+);
